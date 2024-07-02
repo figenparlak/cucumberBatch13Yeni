@@ -1,0 +1,364 @@
+API classes -
+Class - 1
+What is API - API stands for application programming interface which is
+used to communicate in between UI - frontend and DB - Backend.
+A client is someone who makes a request
+A server is someone who responds to that request
+postman - it allows you to make a request for API and gives you the
+response of API which you can read and understand the process through it
+Types of layer -
+Presentation layer - It is the layer which allows user to interact with
+the application. i.e. UI
+Application layer - It is the layer where the logic of the application has
+been written.
+Data layer - It is the layer where the data of the application is stored
+Client - Server architecture -
+1 tier architecture - When the presentation layer, application layer, and
+data layer are available at the same place, we call it 1 tier architecture
+application
+Example - calculator, notepad, etc - standalone/desktop applications
+2 tier architecture - When the presentation layer is available at client
+end and application + data layer is available at server end, we call it 2
+tier architecture application
+Example - dominos, subway etc
+3 tier architecture - When the presentation layer is available at client
+end, application layer is available at 2nd place and database is
+available at 3rd place, we call it 3 tier architecture
+Example - Facebook, insta etc
+N - tier architecture - When we have multiple layers (presentation,
+application and data layer), we call it n tier architecture
+Examples - Skyscanner etc
+Why do we need to use API's -
+To communicate in between the systems developed in different programming
+languages
+To increase the security of the systems
+To provide cost-effective solutions
+What are the types of operations we will perform in API testing -
+Create a record in the database
+Retrieve a record from the database
+Update a record from the database
+Delete a record from the database
+CRUD operations
+Class 2 -
+Recap -
+-- What is API?
+-- Why do we need to use API?
+--
+Request
+Response
+Client
+Server
+client - server arch
+1 tier - eg cal
+2 tier - subway, dominos, pizzahut
+3 tier - Instagram, FB etc
+n -tier - sky scanner
+To test API, we need
+Tool to test API
+Swagger document - API documentation -
+URL + API + End point
+API's which are hosted over the internet is web services
+All web services are API but all API's are not web services
+We have 2 types of web services -
+REST - Representational state transfer
+SOAP - simple object access protocol
+REST - We will work with REST services
+HTTP?
+protocol of communication over the internet
+It allows you to access websites and to communicate with websites, we have
+to follow its standards.
+Methods of HTTP to follow standards to perform operations on website via
+internet.
+CRUD -
+Create - POST (It is a method that is not a postman.)
+To create the admin user in the system - we need to send a request
+Before sending the request we have to make the request -
+3 things basically we need to make a request (Additional things will be
+added as per the requirement)
+Address of the server + API Location + Endpoint
+Base URI = URL + API + Endpoint
+BASE URI -
+hrm.syntaxtechs.net/syntaxapi/api/createUser.php
+Type of request - POST
+Body or payload -
+{
+"name": "batch13",
+"email": "batch13@abc.com",
+"password": "Test@123"
+}
+We need to understand the format of the body
+Class 3 -
+Recap -
+HTTP - allows you to communicate with websites over the protocol
+CRUD
+- create - POST
+- retrieve - GET
+- update - PUT
+- delete - DELETE
+- how to make a request
+URL + API location + endpoint
+Base URI = hrm.syntaxtechs.net/syntaxapi/api/createUser.php
+type of method - POST
+{
+"name": "batch13",
+"email": "batch13@abc.com",
+"password": "Test@123"
+}
+We pass the data in either JSON or XML format
+Rest uses JSON format to pass and receive the data
+we pass key value pair in JSON format
+JSON stands for javascript object notation
+Content type - application/json
+In response - we will look for 2 things
+API status code
+Body of the response
+API status code - we should focus on 2xx and 4xx series
+201 created - to create a record in DB
+200 Ok - to complete request successfully
+HINT : Whenever we work with post request
+URI
+type of request
+body/payload in json format
+content type
+Authentication and Authorization
+- authentication confirms your identity
+- authorization controls what kind of access you have in the system
+4 questions are answered here
+who are you
+are you allowed
+show your id
+what permission do you have
+Statefull application - when the state of the server memory is set to
+true, user can save credentials there, we call it stateful application
+Stateless application - when the state of the server memory is set to
+false, user works with token, we call it stateless application
+Class 4 -
+Recap -
+Created an admin user
+swagger tells what information we need to make a request
+Base URI =
+Type of request =
+Body / payload =
+Headers - content -type =
+201 - status code we should expect for creating a record
+API status code + body of the response we should check
+JSON format - body of the response
+JSON format - body of the request
+authentication - authorization
+who are you
+are you allowed
+show your id
+what permissions you have
+Statefull application
+Stateless application
+Token - Stateless application - Syntax HRMS
+Request to generate a token
+Base URI - hrm.syntaxtechs.net/syntaxapi/api/generateToken.php
+type of request - POST
+Body/paylod
+{
+"email": "batch13api@abc.com",
+"password": "Test@123"
+}
+header - content type - application/json
+Token - JWT
+3 types of token -
+Bearer token
+MAC token
+Grants
+in syntax hrms application we will work with bearer token to perform crud
+operations
+every token has 3 things -
+header - type of token and algorithm is used to generate the token
+payload - issuer, expiration time, creation time, user id
+signature - secret bit encrypted - same message travelled from server to
+client
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.
+eyJpYXQiOjE2NjQwMzE0NzIsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY2NDA3NDY3MiwidX
+NlcklkIjoiNDM2NiJ9.
+vMxrPQ-fiRfHS1Zgod4vSA5MaY5YD3cEZD9VIBauIQM
+To create an employee -
+Base URI
+Type of method - post
+body/payload - json format
+header - content type
+Authorization - token (JWT - bearer)
+Get employee -
+Base URI -
+Type of method -
+Query parameter - to specify one employee from the group of employees
+hrm.syntaxtechs.net/syntaxapi/api/getOneEmployee.php?employee_id=40888A
+hrm.syntaxtechs.net/syntaxapi/api/generateToken.php
+after ? you get is query parameter, it is available in the form of key and
+value
+after / you get is path parameter
+if you work with stateful application in future, in auth, select basic
+auth and enter username and password
+Cookies -
+cookies are small block of data / created created by a web server, when a
+user is browsing something, it will capture your browsing history
+use of them -
+track our information for advertisement purpose
+remeber our login information to save our time when we use website next
+time we don't have to login
+Data scientist use this information to filter the data and sell it from
+3rd party cookies
+Also, in-house cookies have been used to develop in house product - google
+hangout, google meetings, google drive, extenstions etc
+AI - ML people write prediction algorithms to predict what would you buy
+from the suggestions
+CRUD -
+create
+retrieve the employee
+GET all employees
+Base URI -
+Type of method -
+Authorization -
+Update the employee details -
+Base URI - hrm.syntaxtechs.net/syntaxapi/api/updateEmployee.php
+Type of method - PUT
+body/payload -
+{
+"employee_id": "40888A",
+"emp_firstname": "ozkana",
+"emp_lastname": "zee",
+"emp_middle_name": "pati chai",
+"emp_gender": "F",
+"emp_birthday": "2005-08-24",
+"emp_status": "fired",
+"emp_job_title": "Manager"
+}
+Update partial employee details
+Base URI =
+hrm.syntaxtechs.net/syntaxapi/api/updatePartialEmplyeesDetails.php
+Type of method = PATCH
+Body /payload
+{
+"employee_id": "40888A",
+"emp_job_title": "CEO"
+}
+Class 5 -
+Recap -
+-- CRUD --
+JWT - Json web token
+-- bearer token
+-- MAC token
+-- Grants
+Why do we need token?
+-- to perform CRUD operations in stateless application, we need to show
+the proof that we are allowed to perform these operations in application.
+Created a normal employee -
+Base URI
+Type of method
+Body/payload - JSON format
+Headers - Content type
+Authorization - Bearer token
+NOTE: After every operation, we should perform retrieve (GET) operation.
+Get the created employee -
+Updating the employee -
+Update full details (PUT) - 200
+Update partial details (PATCH) - 201
+Parameters -
+Query parameters - key and value we pass them in postman. Once you update
+the query params, they will get reflected after ? in Base URI
+Path parameters - it comes after / in the url path
+DELETE Query -
+Base URI = hrm.syntaxtechs.net/syntaxapi/api/deleteEmployee.php
+Type of method = DELETE
+Query parameter = employee_id
+Authorization = bearer token
+CRUD operations -
+Different environments to work upon -
+Devlopment
+QA/test
+Staging
+Production
+the url of these environments different -
+When we run the collection, we understood that we dont have test in
+request
+Assertion is missing -
+For example -
+Create an employee using API
+verify the status code i.e. 201
+verify the message - Employee Created
+Verify the body of the response -
+to write the test in postman - we use chai assertion library
+We need to write test script for verification -
+we have to write the script in postman using language - JavaScript
+in javascript language -
+name of function
+function
+body of the function
+these 3 things we should look into
+When taking the snippet from tests tab,
+pm object will be used for every verification
+PM object is postman object - which is referring to all the tests
+available in chai assertion library
+pm.test(){}
+When we verify the response, we verify the response
+status code
+response body
+response headers
+Class 6 -
+In review you have covered, json object in postman to get the response
+body
+API Testing automation -
+We use - postman for manual testing in API but, for automation we will use
+Java rest assured API
+Java rest assured is DSL (domain specific language)
+it is a java library used to automate REST API's
+to integrate it in our project, we have add dependency in pom.xml file
+Rest assured -
+it follows a behavior driven development approach (BDD)
+Given - pre condition - prepare the request
+When - actions - making a call / sending the request / hitting the
+endpoint
+Then - expected result - verification / assertions
+NOTE: BaseURI = base url + endpoint - postman
+REST ASSURED => URI = URL = hrm.syntaxtechs.net/syntaxapi/api
+Hamcrest matchers - it is a class that contains methods to perform
+assertions
+JsonPath vs JsonPath()?
+JsonPath() is a method that belongs to JsonPath class
+Class 7 -
+Integrating the rest assured api with cucumber
+we need separate API steps package because of hooks
+API constants class is generally for the constants available in API
+API payload constants are available to pass the payload/body in the method
+Class 8 -
+Recap -
+we integrated rest assured API in our framework -
+We added dependency for rest assured and JSON
+scenario - in feature file we write it (resources)
+We created API.feature to write API scenario
+now we need step definitions to implement the steps -
+to write all the API steps, we need separate package for API because of
+hooks available in previous package which supports selenium
+we are writing API code under step definitions
+given preparing the request
+when hitting rhe endpoint
+then verification
+After getting the created employee, we have verified the data from
+employee object
+Now we are going to create an employee but this time, we are going to pass
+the data from JSON object
+we were creating an employee using different payload method
+hitting the endpoint
+we verified the response code 201
+we are creating an employee using json payload method
+hitting the endpoint
+we verified the response code 201
+THE ONLY THING WE ARE CHANGING IS THE PAYLOAD METHOD FOR CREATING THE
+EMPLOYEE
+NOTE: we are learning how to create an employee using different payload
+methods
+when you pass the values from featrue file, make sure you follow the order
+of the keys
+3 ways to create the employee -
+via default payload
+via json payload with hard coded values
+via json payload with dynamic values from feature file
+Homework
+Write a scenario to delete the employee.
+Use apprporpiate method
+Verify respective response code
